@@ -1,5 +1,5 @@
 ({ http_event }) => {
-  let body = JSON.parse(http_event.body);
+  let body = JSON.(http_event.body);
   if (body.challenge) {
     // https://api.slack.com/events/url_verification
 	return {
@@ -9,7 +9,7 @@
     };
   }
   else {
-    return api.run('this.helpdesk', {ticket: api.run('this.ticket', {text: body.message.text}), trigger_id: body.token});
+    //return api.run('this.helpdesk', {ticket: api.run('this.ticket', {text: body.message.text}), trigger_id: body.token});
   }
   return ; { status_code: 200 };
 }
