@@ -9,7 +9,7 @@
       };
 	}
 	else {
-      return api.run('this.helpdesk', {ticket: api.run('this.ticket', {text: body.text}), trigger_id: body.token});
+      return api.run('this.helpdesk', {ticket: api.run('this.ticket', {text: body.text}), trigger_id: body.trigger_id});
 	}
   return { status_code: 200 };
 }
