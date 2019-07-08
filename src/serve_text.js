@@ -1,35 +1,14 @@
 ({slackBody}) => {
   
-  let dialogObj = JSON.stringify([
-    {
-      title: 'Ticket created for ${ticket.userEmail}',
-      // Get this from the 3rd party helpdesk system
-      title_link: 'http://example.com',
-      text: 'cat',
-      fields: [
-        {
-          title: 'Title',
-          value: 'hello',
-        },
-        {
-          title: 'Description',
-          value: 'None provided',
-        },
-        {
-          title: 'Status',
-          value: 'Open',
-          short: true,
-        },
-        {
-          title: 'Urgency',
-          value: 'High',
-          short: true,
-        },
-      ],
-    },
-  ]);
+  const dialogObj = {
+    callback_id: "type_race",
+    notify_on_cancel: false,
+    title: "SlackRacer Speed Test",
+    elements,
+    state
+  };
   const trigger_id = slackBody.trigger_id;
-  return api.run("slack_bot.open_dialog", { $body: { trigger_id: trigger_id, dialog: dialogObj }});
+  return api.run("slack_bot.open_dialog", { $body: { trigger_id, dialog: JSON.stringify(dialogObj) }});
 }
 
 /*
