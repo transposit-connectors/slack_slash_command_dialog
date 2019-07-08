@@ -15,7 +15,7 @@
 	};
 	}
 	else {
-		api.run('this.helpdesk', {trigger_id: body.trigger_id});
+		api.run('this.helpdesk', {trigger_id: body.trigger_id, text: body.text});
 	}
 	return { status_code: 200 };
 }
