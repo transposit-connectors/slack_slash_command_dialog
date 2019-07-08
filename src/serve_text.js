@@ -4,8 +4,6 @@
     callback_id: "type_race",
     notify_on_cancel: false,
     title: "SlackRacer Speed Test",
-    elements,
-    state
   };
   const trigger_id = slackBody.trigger_id;
   return api.run("slack_bot.open_dialog", { $body: { trigger_id, dialog: JSON.stringify(dialogObj) }});
