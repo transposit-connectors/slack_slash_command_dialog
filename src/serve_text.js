@@ -29,7 +29,7 @@
     },
   ]);
   const trigger_id = slackBody.trigger_id;
-  return api.run("slack_bot.open_dialog", { $body: { trigger_id, dialog: dialogObj }});
+  return api.run("slack_bot.open_dialog", { $body: { trigger_id: trigger_id, dialog: dialogObj }});
 }
 
 /*
