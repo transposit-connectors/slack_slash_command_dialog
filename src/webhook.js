@@ -10,7 +10,7 @@
   }
   else {
     let email = 'test@email.com';
-    api.run('this.helpdesk', {trigger_id: body.trigger_id, email: `Ticket created for ${email}`, text: 'test', title: 'Test Title', description: "I am testing this", urgency: 'Low'});
+    api.run('this.helpdesk', {trigger_id: body.trigger_id, text: 'test'});
   }
   return { status_code: 200 };
 }
