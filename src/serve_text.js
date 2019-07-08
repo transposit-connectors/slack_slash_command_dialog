@@ -1,5 +1,6 @@
-(params) => {
-  return JSON.stringify([
+({slackBody}) => {
+  
+  let dialogObj = JSON.stringify([
     {
       title: 'Ticket created for ${ticket.userEmail}',
       // Get this from the 3rd party helpdesk system
@@ -27,6 +28,8 @@
       ],
     },
   ]);
+  const trigger_id = slackBody.trigger_id;
+  return api.run("slack_bot.open_dialog", { $body: { trigger_id, dialog: dialogObj }});
 }
 
 /*
