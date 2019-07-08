@@ -53,6 +53,10 @@
             "type": "OBJECT"
           }],
           "js": "ticket_recieved.js"
+        },
+        "access": {
+          "requireApiKey": true,
+          "webhook": true
         }
       }, {
         "id": "open_helpdesk",
