@@ -9,7 +9,8 @@
     };
   }
   else {
-    api.run('this.helpdesk', {trigger_id: body.trigger_id,});
+    let email = 'test@email.com';
+    api.run('this.helpdesk', {trigger_id: body.trigger_id, email: `Ticket created for ${email}`, text: 'test', title: 'Test Title', description: "I am testing this", urgency: 'Low'});
   }
   return { status_code: 200 };
 }
