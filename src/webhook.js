@@ -15,7 +15,6 @@
   let body = http_event.parsed_body;
   setImmediate(() => {
     api.run("this.serve_text", {slackBody: body});
-    }
   });
   return { status_code: 200 };
 }
