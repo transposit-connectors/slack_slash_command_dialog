@@ -33,10 +33,22 @@
             "name": "trigger_id",
             "type": "STRING"
           }, {
-            "name": "dialog",
+            "name": "email",
+            "type": "STRING"
+          }, {
+            "name": "text",
+            "type": "STRING"
+          }, {
+            "name": "title",
+            "type": "STRING"
+          }, {
+            "name": "description",
+            "type": "STRING"
+          }, {
+            "name": "urgency",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM slackbot.open_dialog\n  WHERE $body=(SELECT {\n    'dialog' : @dialog,\n    'trigger_id' : @trigger_id\n})\n"
+          "tql": "SELECT * FROM slackbot.open_dialog\n  WHERE $body=(SELECT {\n    'trigger_id' : @trigger_id,\n    'dialog': [\n      {\n        'title': @email,\n        -- Get this from the 3rd party helpdesk system\n        'title_link': 'http://example.com',\n        'text': @text,\n        'fields': [\n          {\n            'title': 'Title',\n            'value': @title,\n          },\n          {\n            'title': 'Description',\n            'value': @description,\n          },\n          {\n            'title': 'Status',\n            'value': 'Open',\n            'short': true,\n          },\n          {\n            'title': 'Urgency',\n            'value': @urgency,\n            'short': true,\n          },\n        ],\n      },\n    ]\n})\n"
         }
       }],
       "dataConnections": [{
