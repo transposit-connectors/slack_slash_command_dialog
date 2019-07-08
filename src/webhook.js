@@ -1,10 +1,4 @@
 ({ http_event }) => {
-//   let body = http_event.parsed_body;
-//   setImmediate(() => {
-//     api.run("this.serve_text", {slackBody: body});
-//   });
-//   return { status_code: 200 };
-// }
 	let body = http_event.parsed_body;
 	if (body.challenge) {
 	// https://api.slack.com/events/url_verification
@@ -17,5 +11,5 @@
 	else {
 		api.run('this.helpdesk', {trigger_id: body.trigger_id, text: body.text});
 	}
-	return { status_code: 200 };
+	return body; { status_code: 200 };
 }
