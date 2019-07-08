@@ -1,5 +1,5 @@
 ({slackBody}) => {
-  
+  let text = "hello";
   const elements = [{
     type: "textarea",
     name: "input",
