@@ -11,5 +11,5 @@
   else {
     api.run('this.helpdesk', {trigger_id: body.trigger_id, text: body.text});
   }
-  return body; { status_code: 200 };
+  return { status_code: 200 };
 }
