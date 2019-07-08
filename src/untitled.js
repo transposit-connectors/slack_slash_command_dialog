@@ -29,5 +29,5 @@
   };
 
   const trigger_id = slackBody.trigger_id;
-  return api.run("slack_bot.open_dialog", { $body: { trigger_id, dialog: JSON.stringify(dialogObj) }});
+  return api.run("slackbot.open_dialog", { $body: { trigger_id, dialog: JSON.stringify(dialogObj) }});
 }
