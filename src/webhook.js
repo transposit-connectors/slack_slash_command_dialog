@@ -9,7 +9,7 @@
     };
   }
   else {
-    api.run('this.helpdesk', {trigger_id: body.trigger_id, text: body.text});
+    api.run('this.helpdesk', {trigger_id: body.trigger_id, dialog: api.run('this.dialog')});
   }
   return { status_code: 200 };
 }
