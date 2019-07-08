@@ -38,11 +38,6 @@
           }],
           "tql": "SELECT * FROM slackbot.open_dialog\n  WHERE $body=(SELECT {\n    'dialog' : @dialog,\n    'trigger_id' : @trigger_id\n})\n"
         }
-      }, {
-        "id": "serve_text",
-        "function": {
-          "js": "serve_text.js"
-        }
       }],
       "dataConnections": [{
         "ref": "slackbot.raw",
