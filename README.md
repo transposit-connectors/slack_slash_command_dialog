@@ -19,7 +19,8 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 5. Navigate to the **OAuth & Permissions** page and make sure the following scopes are pre-selected:
    - `commands`
    - `bot`
-6. Click 'Save Changes' and install the app (You should get an OAuth access token after the installation)
+6. Add https://accounts.transposit.com/oauth/v2/handle-redirect as a Redirect URI.
+7. Click 'Save Changes' and install the app (You should get an OAuth access token after the installation)
 
 #### Add a Slash Command
 
@@ -40,7 +41,8 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 
 1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_terms_of_service_sample?readme=true)
 2. Authenticate your API token with Slack
-3. Deploy!
+3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication.
+4. Under configuration, set slackbot `AccessTokenPath` to `bot.bot_access_token` and the scope to the OAuth values in your app.
 
 ### Transposit Functions
 
