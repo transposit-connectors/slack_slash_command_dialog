@@ -10,6 +10,7 @@
       }],
       "operations": [{
         "id": "confirm_ticket",
+        "description": "Sends the confirmation as a PM to the user",
         "tql": {
           "parameters": [{
             "name": "channel",
@@ -31,6 +32,7 @@
         }
       }, {
         "id": "ticket_recieved",
+        "description": "Activates when the ticket is submitted",
         "function": {
           "parameters": [{
             "name": "http_event",
@@ -64,6 +66,7 @@
         }
       }, {
         "id": "open_dialog",
+        "description": "Opens the helpdesk dialog",
         "tql": {
           "parameters": [{
             "name": "text",
