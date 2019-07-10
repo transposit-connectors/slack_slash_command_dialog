@@ -80,6 +80,36 @@
           "requireApiKey": true,
           "webhook": true
         }
+      }, {
+        "id": "create_record",
+        "tql": {
+          "parameters": [{
+            "name": "id",
+            "type": "STRING"
+          }, {
+            "name": "email",
+            "type": "STRING"
+          }, {
+            "name": "title",
+            "type": "STRING"
+          }, {
+            "name": "description",
+            "type": "STRING"
+          }, {
+            "name": "urgency",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appgMPlE2eQtLjU46'\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id, 'userEmail': @email, 'title': @title, 'description': @description, 'urgency': @urgency },\n  })\n"
+        }
+      }, {
+        "id": "get_email",
+        "tql": {
+          "parameters": [{
+            "name": "user",
+            "type": "STRING"
+          }],
+          "tql": "SELECT user.profile.email FROM slack.get_users_info\n  WHERE user=@user\n"
+        }
       }],
       "dataConnections": [{
         "ref": "slackbot.raw",
