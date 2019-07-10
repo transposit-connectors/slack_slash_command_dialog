@@ -7,5 +7,5 @@
   else {
     api.run('this.confirm_ticket', {channel: body.user.id, email: `Ticket created for ${body.user.name}`, title: body.submission.title, description: 'None provided', urgency: body.submission.urgency});
   }
-  return body;{ status_code: 200 };
+  return { status_code: 200 };
 }
