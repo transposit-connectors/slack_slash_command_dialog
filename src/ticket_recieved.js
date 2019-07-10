@@ -7,7 +7,7 @@
   let url = `https://airtable.com/tblk7ryCHBa1uJVy0/viwoi2AplBGupO48j/${entry}?blocks=hide`;
   let description = 'None provided';
   
-  if (!body.submission.description){
+  if (body.submission.description){
     let description = body.submission.description;
   }
   api.run('this.confirm_ticket', {channel: body.user.id, email: `Ticket created for ${body.user.name}`, title: body.submission.title, description: description, urgency: body.submission.urgency, url: url});
