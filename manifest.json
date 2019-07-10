@@ -93,6 +93,17 @@
             }
           }
         }
+      }, {
+        "ref": "slack.raw",
+        "overrides": {
+          "swagger": {
+            "oauthConfig": {
+              "scope": "users:read,users:read.email"
+            },
+            "executionLimits": {
+            }
+          }
+        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
