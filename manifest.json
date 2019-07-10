@@ -85,6 +85,7 @@
         }
       }, {
         "id": "create_record",
+        "description": "Creates the ticket in airtable",
         "tql": {
           "parameters": [{
             "name": "id",
@@ -106,6 +107,7 @@
         }
       }, {
         "id": "get_email",
+        "description": "Returns a user's slack email",
         "tql": {
           "parameters": [{
             "name": "user",
@@ -115,6 +117,7 @@
         }
       }, {
         "id": "get_records",
+        "description": "Returns the record ids of a user",
         "tql": {
           "parameters": [{
             "name": "id",
