@@ -30,8 +30,11 @@
           }, {
             "name": "urgency",
             "type": "STRING"
+          }, {
+            "name": "url",
+            "type": "STRING"
           }],
-          "tql": "SELECT * FROM slackbot.post_chat_message\n  WHERE $body=(SELECT {\n    'channel': @channel,\n    'as_user': true,\n    'text': 'Helpdesk ticket created!',\n    'attachments': [\n      {\n        'title': @email,\n        -- Get this from the 3rd party helpdesk system\n        'title_link': 'http://example.com',\n        'fields': [\n          {\n            'title': 'Title',\n            'value': @title,\n          },\n          {\n            'title': 'Description',\n            'value': @description,\n          },\n          {\n            'title': 'Status',\n            'value': 'Open',\n            'short': true,\n          },\n          {\n            'title': 'Urgency',\n            'value': @urgency,\n            'short': true,\n          },\n        ],\n      },\n    ]\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM slackbot.post_chat_message\n  WHERE $body=(SELECT {\n    'channel': @channel,\n    'as_user': true,\n    'text': 'Helpdesk ticket created!',\n    'attachments': [\n      {\n        'title': @email,\n        -- Get this from the 3rd party helpdesk system\n        'title_link': @url,\n        'fields': [\n          {\n            'title': 'Title',\n            'value': @title,\n          },\n          {\n            'title': 'Description',\n            'value': @description,\n          },\n          {\n            'title': 'Status',\n            'value': 'Open',\n            'short': true,\n          },\n          {\n            'title': 'Urgency',\n            'value': @urgency,\n            'short': true,\n          },\n        ],\n      },\n    ]\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }, {
         "id": "open_helpdesk",
@@ -109,6 +112,15 @@
             "type": "STRING"
           }],
           "tql": "SELECT user.profile.email FROM slack.get_users_info\n  WHERE user=@user\n"
+        }
+      }, {
+        "id": "get_records",
+        "tql": {
+          "parameters": [{
+            "name": "id",
+            "type": "STRING"
+          }],
+          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\n  AND table='Tickets'\n  AND fields.userId=@id"
         }
       }],
       "dataConnections": [{
