@@ -37,7 +37,7 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 2. Set the Request URL to the generated webhook url for `ticket_received` in Transposit under Deploy
 3. Save the change.
 
-### Create your Database in Airtable
+#### Create your Database in Airtable
 
 1. Add a new base in Airtable. If you are new to Airtable, check out their [Support Center](https://support.airtable.com/hc/en-us).
 2. Modify your table with the name `Tickets` and
