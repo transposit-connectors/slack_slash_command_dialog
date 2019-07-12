@@ -103,7 +103,7 @@
             "name": "urgency",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appgMPlE2eQtLjU46'\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id, 'userEmail': @email, 'title': @title, 'description': @description, 'urgency': @urgency },\n  })\n"
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id, 'userEmail': @email, 'title': @title, 'description': @description, 'urgency': @urgency },\n  })\n"
         }
       }, {
         "id": "get_email",
@@ -123,7 +123,7 @@
             "name": "id",
             "type": "STRING"
           }],
-          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\n  AND table='Tickets'\n  AND fields.userId=@id"
+          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND fields.userId=@id"
         }
       }],
       "dataConnections": [{

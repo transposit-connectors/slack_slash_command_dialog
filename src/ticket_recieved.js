@@ -5,6 +5,7 @@
   api.run('this.create_record', {id: body.user.id, email: api.run('this.get_email', {user: body.user.id})[0].email, title: body.submission.title, description: body.submission.description, urgency: body.submission.urgency});
   //Find the entry to set the url
   let entry = api.run('this.get_records', {id: body.user.id}).pop().id;
+  //Change this url to your Airtable location
   let url = `https://airtable.com/tblk7ryCHBa1uJVy0/viwoi2AplBGupO48j/${entry}?blocks=hide`;
   //Choose the description and return to user
   if (body.submission.description) {
