@@ -10,7 +10,7 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 
 ## Setup
 
-### Create a Slack app
+#### Create a Slack app
 
 1. Create an app at [https://api.slack.com/apps](https://api.slack.com/apps)
 2. Add a Slash command (See _Add a Slash Command_ section below)
