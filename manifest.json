@@ -123,7 +123,7 @@
             "name": "id",
             "type": "STRING"
           }],
-          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND fields.userId=@id"
+          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND fields.userId=@id\n  "
         }
       }],
       "dataConnections": [{
