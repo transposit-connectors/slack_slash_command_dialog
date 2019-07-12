@@ -51,7 +51,8 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 
 1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_slash_command_dialog?readme=true)
 2. Authenticate your API token with Slack
-3. Change all the Airtable specific strings to those matching your credentials.
+3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication
+4. Change all the Airtable specific strings to those matching your credentials
    - `create_record` baseId
    - `get_records` baseId
    - `ticket_received` url
