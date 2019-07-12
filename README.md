@@ -37,11 +37,24 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 2. Set the Request URL to the generated webhook url for `ticket_received` in Transposit under Deploy
 3. Save the change.
 
+### Create your Database in Airtable
+
+1. Add a new base in Airtable. If you are new to Airtable, check out their [Support Center](https://support.airtable.com/hc/en-us).
+2. Modify your table with the name `Tickets` and
+   - First column `userId` with type "Single line text"
+   - Second column `userEmail` with type "Email"
+   - Third column `title` with type "Single line text"
+   - Fourth column `description` with type "Long text"
+   - Fifth column `urgency` with type "Single select" and options `Low`, `Medium`, and `High`
+
 #### Fork in Transposit
 
 1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_slash_command_dialog?readme=true)
 2. Authenticate your API token with Slack
-3. Set up your Airtable workspace for use as a database.
+3. Change all the Airtable specific strings to those matching your credentials.
+   - `create_record` baseId
+   - `get_records` baseId
+   - `ticket_received` url
 
 ### Transposit Functions
 
