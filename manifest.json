@@ -102,8 +102,11 @@
           }, {
             "name": "urgency",
             "type": "STRING"
+          }, {
+            "name": "baseId",
+            "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id, 'userEmail': @email, 'title': @title, 'description': @description, 'urgency': @urgency },\n  })\n"
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId=@baseId\t\t-- Be sure to set this to your Airtable BaseId in environment variables\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id,\n             \t'userEmail': @email,\n             \t'title': @title,\n             \t'description': @description,\n             \t'urgency': @urgency\n               },\n  })\n"
         }
       }, {
         "id": "get_email",
@@ -114,16 +117,6 @@
             "type": "STRING"
           }],
           "tql": "SELECT user.profile.email FROM slack.get_users_info\n  WHERE user=@user\n"
-        }
-      }, {
-        "id": "get_records",
-        "description": "Returns the record ids of a user",
-        "tql": {
-          "parameters": [{
-            "name": "id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT id FROM airtable.get_records\n  WHERE baseId='appgMPlE2eQtLjU46'\t\t-- Change this to your airtable baseId\n  AND table='Tickets'\n  AND fields.userId=@id\n  "
         }
       }],
       "dataConnections": [{
