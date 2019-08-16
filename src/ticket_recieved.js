@@ -3,6 +3,7 @@
   
   // Create the ticket entry in our databse
   api.run('this.create_record', {id: body.user.id, email: api.run('this.get_email', {
+    																				 baseId: env.get("baseId"),
     																				 user: body.user.id})[0].email,
                                  													 title: body.submission.title,
                                  													 description: body.submission.description,
