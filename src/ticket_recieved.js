@@ -8,8 +8,6 @@
                                  													 description: body.submission.description,
                                  													 urgency: body.submission.urgency
                                 													});
-  // Find the entry to set the url
-  let entry = api.run('this.get_records', { id: body.user.id, baseId: env.get("baseId")}).pop().id;
   // Choose the description and return to user
   if (body.submission.description) {
     api.run('this.confirm_ticket', {
