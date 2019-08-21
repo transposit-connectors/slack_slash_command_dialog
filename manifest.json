@@ -103,7 +103,7 @@
             "name": "baseId",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId=@baseId\t\t-- Be sure to set this to your Airtable BaseId in environment variables\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {'userId': @id,\n             \t'userEmail': @email,\n             \t'title': @title,\n             \t'description': @description,\n             \t'urgency': @urgency\n               },\n  })\n"
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId=@baseId\t\t-- Be sure to set this to your Airtable BaseId in environment variables\n  AND table='Tickets'\n  AND $body=(SELECT {\n    'fields' : {\n             \t'userId': @id,\n             \t'userEmail': @email,\n             \t'title': @title,\n             \t'description': @description,\n             \t'urgency': @urgency\n               },\n  })\n"
         }
       }, {
         "id": "get_email",
