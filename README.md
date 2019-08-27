@@ -60,8 +60,6 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 
 `create_record`: Creates an airtable record of the helpdesk ticket.
 
-`get_email`: Returns the email address of a slack user.
-
 `get_records`: Returns a list of airtable records to get the id.
 
 `open_dialog`: The Slack API call to open the helpdesk dialog.
