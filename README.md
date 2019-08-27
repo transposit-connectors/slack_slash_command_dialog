@@ -1,6 +1,6 @@
 # Slash Command and Dialogs blueprint
 
-> _Updated July 2019: This are specific instructions for use in Transposit. For other methods, check the Slack API website._
+> _Updated August 2019: This are specific instructions for use in Transposit. For other methods, check the Slack API website._
 
 ## Creating a helpdesk ticket using a Slash Command and a Dialog
 
@@ -49,13 +49,10 @@ Use a slash command and a dialog to create a helpdesk ticket in a 3rd-party syst
 
 #### Fork in Transposit
 
-1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_slash_command_dialog?readme=true)
-2. Authenticate your API token with Slack
-3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication
-4. Change all the Airtable specific strings to those matching your credentials
-   - `create_record` baseId
-   - `get_records` baseId
-   - `ticket_received` url
+1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_slash_command_dialog?fork=true)
+2. Authenticate slackbot's API token with the Client ID and Secret under **Data connections > Slack > Authentication**. You can find this in your Slack App under App Credentials.
+3. Add Airtable and Slack's keys to production under **Deploy > Production Keys** and follow the instructions.
+4. Authenticate the Airtable [environment variables](https://www.transposit.com/docs/building/environment-variables/) in **Deploy**.
 
 ### Transposit Functions
 
