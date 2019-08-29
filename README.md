@@ -1,5 +1,4 @@
 # Slack Slash Commands and Dialog
-# Slash Command and Dialogs blueprint
 
 > _Updated August 2019: This are specific instructions for use in Transposit. For other methods, check the Slack API website._
 
