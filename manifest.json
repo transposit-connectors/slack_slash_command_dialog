@@ -145,6 +145,8 @@
         "type": "STRING",
         "default": "https://example.com/ticket"
       }]
-    }
+    },
+    "description": "A Transposit port of the Slack blueprint to create a helpdesk issue within Slack",
+    "displayName": "Slack Slash Commands and Dialog"
   }
 }
