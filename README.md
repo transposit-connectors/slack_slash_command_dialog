@@ -1,6 +1,6 @@
 # Slack Slash Commands and Dialog
 
-> _Updated August 2019: This are specific instructions for use in Transposit. For other methods, check the Slack API website._
+> _Updated August 2019: These are specific instructions for use in Transposit. For other methods, check the Slack API website._
 
 ## Creating a helpdesk ticket using a Slash Command and a Dialog
 
