@@ -6,7 +6,7 @@
     api.run('this.create_record', {
                                     baseId: env.get("baseId"),
                                     id: body.user.id,
-                                    email: api.query('SELECT user.profile.email FROM slack.get_users_info WHERE user=@user', 
+                                    email: api.query('SELECT user.profile.email FROM slackbot.get_users_info WHERE user=@user', 
                                       {user: body.user.id})[0].email,
                                     title: body.submission.title,
                                     description: body.submission.description,
